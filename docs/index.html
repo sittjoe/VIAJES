@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carritos de Viaje | Tu Asesor de Confianza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="hero" id="inicio">
+        <nav class="navbar">
+            <div class="brand">Viajes con <span>Ana</span></div>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#carrito-demo">Carrito Demo</a></li>
+                <li><a href="#seguridad">Seguridad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a class="cta" href="#carrito-demo">Crear Carrito</a>
+        </nav>
+        <div class="hero-content">
+            <div>
+                <h1>Carritos de compra para tus viajes soñados</h1>
+                <p>
+                    Personalizo cada itinerario y creo un carrito exclusivo para ti.
+                    Revisa el resumen de tu viaje, actualiza detalles y realiza el pago con total tranquilidad.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary" href="#carrito-demo">Ver demo</a>
+                    <a class="secondary" href="#servicios">Descubrir servicios</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h2>Tu próximo viaje</h2>
+                <ul class="trip-points" id="heroTripPoints">
+                    <li>Vuelos directos a Cancún</li>
+                    <li>7 noches en hotel 5★</li>
+                    <li>Traslados y experiencias premium</li>
+                </ul>
+                <div class="price-tag">
+                    <span>Total estimado</span>
+                    <strong>$2,850 USD</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="logos" aria-label="Clientes felices">
+            <p>Más de 200 viajeros confían en mi acompañamiento</p>
+            <div class="logo-strip">
+                <span>Familia Rojas</span>
+                <span>Emociones Travel</span>
+                <span>Novios&Sol</span>
+                <span>Explora+Kids</span>
+            </div>
+        </section>
+
+        <section class="services" id="servicios">
+            <h2>¿Qué incluye tu carrito personalizado?</h2>
+            <div class="service-grid">
+                <article>
+                    <h3>Resumen claro del itinerario</h3>
+                    <p>
+                        Te presento cada detalle de vuelos, hospedaje, actividades y coberturas en un solo lugar para que solo disfrutes.
+                    </p>
+                </article>
+                <article>
+                    <h3>Pagos en línea confiables</h3>
+                    <p>
+                        Formulario con validaciones y cifrado SSL para que tus datos lleguen de forma segura a mis sistemas de gestión.
+                    </p>
+                </article>
+                <article>
+                    <h3>Acompañamiento humano</h3>
+                    <p>
+                        Estoy disponible antes, durante y después de tu viaje para resolver dudas y hacer ajustes en tu carrito.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="demo" id="carrito-demo">
+            <div class="demo-header">
+                <h2>Así luce el carrito que preparo para ti</h2>
+                <p>Personaliza los detalles del viaje y completa el pago con tus datos.</p>
+            </div>
+            <div class="demo-grid">
+                <form class="summary-form" id="summaryForm">
+                    <h3>Resumen del viaje</h3>
+                    <label>
+                        Destino principal
+                        <input type="text" name="destination" placeholder="Ej. París, Francia" required />
+                    </label>
+                    <label>
+                        Fechas
+                        <input type="text" name="dates" placeholder="12 - 20 Julio 2024" required />
+                    </label>
+                    <label>
+                        Hospedaje
+                        <input type="text" name="hotel" placeholder="Hotel Boutique Lumière" required />
+                    </label>
+                    <label>
+                        Experiencias destacadas
+                        <textarea name="activities" rows="3" placeholder="Tour gastronómico, Crucero por el Sena, Museo del Louvre"></textarea>
+                    </label>
+                    <label>
+                        Monto total (USD)
+                        <input type="number" name="total" min="0" step="0.01" placeholder="2850" required />
+                    </label>
+                </form>
+
+                <div class="summary-preview" aria-live="polite">
+                    <h3>Vista previa para tu cliente</h3>
+                    <div class="preview-card">
+                        <h4 id="previewDestination">París, Francia</h4>
+                        <p class="preview-dates" id="previewDates">12 - 20 Julio 2024</p>
+                        <p class="preview-hotel" id="previewHotel">Hotel Boutique Lumière</p>
+                        <ul class="preview-activities" id="previewActivities">
+                            <li>Tour gastronómico</li>
+                            <li>Crucero por el Sena</li>
+                            <li>Museo del Louvre</li>
+                        </ul>
+                        <div class="preview-total">
+                            <span>Total</span>
+                            <strong id="previewTotal">$2,850.00 USD</strong>
+                        </div>
+                    </div>
+                    <div class="preview-note">
+                        Este panel es el que comparto con cada viajero para que aprueben su itinerario antes de pagar.
+                    </div>
+                </div>
+
+                <form class="payment-form" id="paymentForm">
+                    <h3>Datos de pago seguros</h3>
+                    <label>
+                        Nombre en la tarjeta
+                        <input type="text" name="cardName" placeholder="Como aparece en la tarjeta" required />
+                    </label>
+                    <label>
+                        Número de tarjeta
+                        <input type="text" name="cardNumber" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" required />
+                    </label>
+                    <div class="split-fields">
+                        <label>
+                            Vencimiento
+                            <input type="text" name="expiry" inputmode="numeric" maxlength="5" placeholder="MM/AA" required />
+                        </label>
+                        <label>
+                            CVC
+                            <input type="password" name="cvc" inputmode="numeric" maxlength="4" placeholder="***" required />
+                        </label>
+                    </div>
+                    <label>
+                        Correo de confirmación
+                        <input type="email" name="email" placeholder="tuemail@ejemplo.com" required />
+                    </label>
+                    <button type="submit">Confirmar pago</button>
+                    <p class="form-disclaimer">
+                        Esta demo simula un proceso con cifrado SSL y almacenamiento en bóveda segura. Integro los datos exclusivamente para tu confirmación.
+                    </p>
+                    <div class="form-status" id="paymentStatus" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <div class="secure-panel" id="securePanel">
+                <h3>Panel seguro del agente</h3>
+                <p class="secure-message">Cuando tu cliente confirma el pago, recibes los datos cifrados para validar la operación.</p>
+                <div class="secure-data" hidden>
+                    <div>
+                        <span>Cliente</span>
+                        <strong id="secureName">-</strong>
+                    </div>
+                    <div>
+                        <span>Tarjeta</span>
+                        <strong id="secureCard">-</strong>
+                    </div>
+                    <div>
+                        <span>Expira</span>
+                        <strong id="secureExpiry">-</strong>
+                    </div>
+                </div>
+                <button class="reveal" type="button" id="revealButton" hidden>Mostrar datos enmascarados</button>
+                <div class="thanks" id="thanksMessage" hidden>
+                    ¡Gracias por confiar en mí! En breve recibirás tu comprobante por correo.
+                </div>
+            </div>
+        </section>
+
+        <section class="security" id="seguridad">
+            <h2>Tu información siempre protegida</h2>
+            <div class="security-grid">
+                <article>
+                    <h3>Cifrado extremo a extremo</h3>
+                    <p>Utilizo pasarelas certificadas PCI DSS para que los datos sensibles viajen de forma segura.</p>
+                </article>
+                <article>
+                    <h3>Autenticación avanzada</h3>
+                    <p>Cada carrito incluye verificación en dos pasos para tus clientes antes de confirmar el pago.</p>
+                </article>
+                <article>
+                    <h3>Seguimiento transparente</h3>
+                    <p>Recibes reportes automáticos con el estado de cada carrito y confirmaciones de cobro.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Listo para tu próximo lanzamiento de viajes?</h2>
+                <p>Crea experiencias memorables con un proceso de pago claro y profesional.</p>
+                <a href="#contacto" class="primary">Reserva una asesoría</a>
+            </div>
+        </section>
+
+        <section class="contact" id="contacto">
+            <div>
+                <h2>Hablemos de tu próximo destino</h2>
+                <p>
+                    Envíame un mensaje y diseñemos juntos el carrito perfecto para tus clientes.
+                </p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <label>
+                    Nombre
+                    <input type="text" name="contactName" placeholder="Tu nombre" required />
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="contactEmail" placeholder="tuemail@ejemplo.com" required />
+                </label>
+                <label>
+                    Mensaje
+                    <textarea name="message" rows="4" placeholder="Quiero organizar un viaje a..."></textarea>
+                </label>
+                <button type="submit">Enviar mensaje</button>
+                <div class="form-status" id="contactStatus" role="status" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Viajes con Ana. Todos los derechos reservados.</p>
+        <a href="#inicio">Volver arriba</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
